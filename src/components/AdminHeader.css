@@ -1,0 +1,105 @@
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-item.active {
+    background-color: #3b42f1;
+    color: white;
+  }
+  
+  .nav-item:hover:not(.active) {
+    background-color: #e0e0e0;
+  }
+  
+  .logout {
+    margin-top: auto;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .header-section {
+    max-width: 800px;
+  }
+  
+  .header-section h1 {
+    margin-bottom: 30px;
+  }
+  
+  .header-config {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .header-group, .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-field {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .button-config {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .save-button {
+    margin-top: 30px;
+    padding: 12px 40px;
+    background-color: #3b42f1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .save-button:hover {
+    background-color: #2a2fb8;
+  }
