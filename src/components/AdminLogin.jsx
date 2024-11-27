@@ -1,4 +1,3 @@
-// AdminLogin.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -22,11 +21,19 @@ const AdminLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, formData);
+      // Use your deployed backend link here
+      const response = await axios.post(
+        'https://backend-ehuxqkkow-rahul-mishras-projects-f0cfdd62.vercel.app/api/auth/login', 
+        formData
+      );
+      // Store the admin token in localStorage
       localStorage.setItem('adminToken', response.data.token);
+
+      // Redirect to the dashboard
       navigate('/dashboard');
     } catch (err) {
-      setError('Invalid credentials');
+      // Handle error from the backend (e.g., invalid credentials)
+      setError(err.response?.data?.message || 'Invalid credentials');
     }
   };
 
@@ -35,7 +42,6 @@ const AdminLogin = () => {
       <div className="login-left">
         <div className="login-form-container">
           <h1 className="login-title">Welcome Admin</h1>
-          
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-group">
               <input
@@ -48,7 +54,6 @@ const AdminLogin = () => {
                 required
               />
             </div>
-            
             <div className="form-group">
               <input
                 type="password"
@@ -60,20 +65,16 @@ const AdminLogin = () => {
                 required
               />
             </div>
-
             {error && <div className="error-message">{error}</div>}
-            
             <button type="submit" className="login-button">
               LOG IN
             </button>
-
             <div className="forgot-password">
               <a href="/forgot-password">forgot password?</a>
             </div>
           </form>
         </div>
       </div>
-      
       <div className="login-right">
         <div className="logo-container">
           <img
